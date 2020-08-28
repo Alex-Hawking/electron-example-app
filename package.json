@@ -1,0 +1,47 @@
+{
+    "name": "appname",
+    "productName": "Your App Name",
+    "version": "0.1.0",
+    "author": {
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "url": "http://johndoe.now.sh/"
+    },
+    "description": "Example App",
+    "main": "main.js",
+    "license": "BSD-3-Clause",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder build"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "auto-launch": "^5.0.5",
+        "electron": "^9.0.3",
+        "electron-builder": "^22.7.0",
+        "electron-packager": "^14.2.1"
+    },
+    "build": {
+        "productName": "Your App Name",
+        "appId": "org.appname",
+        "win": {
+            "target": [
+                "nsis",
+                "msi"
+            ],
+            "icon": "build/icon.ico"
+        },
+        "extraFiles": [{
+            "from": "assets",
+            "to": "resources",
+            "filter": [
+                "**/*"
+            ]
+        }],
+        "directories": {
+            "buildResources": "build",
+            "output": "release"
+        }
+    }
+}
